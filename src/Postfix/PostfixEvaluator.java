@@ -55,6 +55,8 @@ public class PostfixEvaluator {
     }
 
     public static void main(String[] args) {
+        System.out.println("Calculadora de expresiones en notación Postfix\n");
+
         try (BufferedReader reader = new BufferedReader(new FileReader("datos.txt"))) {
             String line;
             PostfixEvaluator calculator = new PostfixEvaluator();
@@ -62,7 +64,7 @@ public class PostfixEvaluator {
             while ((line = reader.readLine()) != null) {
                 try {
                     int result = calculator.evaluate(line.trim());
-                    System.out.println("Expresión: " + line.trim() + " Resultado: " + result);
+                    System.out.println("Expresión: " + line.trim() + " = " + result);
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
